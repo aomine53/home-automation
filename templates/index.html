@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{% static 'myapp/styles.css' %}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark nav-menu">
+        <a class="navbar-brand logo" href="#">Home Automation</a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse ml-auto" id="navbarMenu">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">How it works</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+
+    <div class="row cards-container">
+        <div class="col-sm-4 py-3">
+            <div class="card">
+                <img class="card-img-top" src="{% static 'myapp/cctv.jpg' %}" alt="CCTV" height="270" width="720">
+                <div class="card-body">
+                    <h5 class="card-title text-bold">CCTV</h5>
+                    <button href="#" id="cctv-on"  class="btn btn-primary">Turn On</button>
+                    <button href="#" id="cctv-off" style="display: none;" class="btn btn-primary">Turn OFF</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4 py-3">
+            <div class="card">
+                <img class="card-img-top" src="{% static 'myapp/bulb.jpg' %}" alt="BULB" height="270" width="720">
+                <div class="card-body">
+                    <h5 class="card-title">Bulb</h5>
+                    <button href="#" id="buld-on" class="btn btn-primary">Turn On</button>
+                    <button href="#" id="bulb-off" class="btn btn-primary">Turn OFF</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4 py-3">
+            <div class="card">
+                <img class="card-img-top" src="{% static 'myapp/fan.jpg' %}" alt="Fan" height="270" width="720">
+                <div class="card-body">
+                    <h5 class="card-title">Fan</h5>
+                    <button href="#" id="fan-on" class="btn btn-primary">Turn On</button>
+                    <button href="#" id="fan-off" class="btn btn-primary">Turn OFF</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="videostream" class="col-sm-12 videostream" >
+        Video Stream
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+
+
+    <script>
+        if(document.getElementById('cctv-on').style.display === 'none'){
+                document.getElementById('videostream').style.display = 'block'
+            }
+            else{
+                document.getElementById('videostream').style.display = 'none'
+            }
+        document.getElementById('cctv-on').addEventListener('click',()=>{
+            if(document.getElementById('cctv-on').style.display === 'none'){
+                document.getElementById('cctv-on').style.display = 'block'
+                document.getElementById('cctv-off').style.display = 'none'
+            }
+            else{
+                document.getElementById('cctv-on').style.display = 'none'
+                document.getElementById('cctv-off').style.display = 'block'
+            }
+            if(document.getElementById('cctv-on').style.display === 'none'){
+                document.getElementById('videostream').style.display = 'block'
+            }
+            else{
+                document.getElementById('videostream').style.display = 'none'
+            }
+        })
+        document.getElementById('cctv-off').addEventListener('click',()=>{
+            if(document.getElementById('cctv-off').style.display === 'none'){
+                document.getElementById('cctv-off').style.display = 'block'
+                document.getElementById('cctv-on').style.display = 'none'
+            }
+            else{
+                document.getElementById('cctv-off').style.display = 'none'
+                document.getElementById('cctv-on').style.display ='block'
+            }
+            if(document.getElementById('cctv-on').style.display === 'none'){
+                document.getElementById('videostream').style.display = 'block'
+            }
+            else{
+                document.getElementById('videostream').style.display = 'none'
+            }
+        })
+    </script>
+</body>
+
+</html>

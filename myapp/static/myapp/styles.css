@@ -1,0 +1,84 @@
+body {
+    font-family: "Open Sans", sans-serif;
+}
+
+a {
+    color: #5c9f24;
+}
+
+a:hover {
+    color: #74c92d;
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Roboto", sans-serif;
+}
+
+.logo {
+    font-size: 28px;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.logo {
+    color: #fff;
+}
+
+
+/* Navigation menu */
+
+
+/* .nav-menu {
+    background-color: black !important;
+    white-space: wrap;
+} */
+
+.nav-menu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-menu ul>li {
+    position: relative;
+    white-space: nowrap;
+    padding: 10px 0 10px 22px;
+}
+
+.nav-menu li>a {
+    display: block;
+    position: relative;
+    color: rgba(255, 255, 255, 0.7);
+    transition: 0.3s;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: "Roboto", sans-serif;
+    padding: 0 4px;
+    text-transform: uppercase;
+}
+
+.cards-container {
+    padding: 50px 100px 25px;
+}
+
+.videostream{
+    background: yellow;
+    height: 40vh;
+    max-width: 80%;
+    margin-left: 8rem;
+}
+
+@media (max-width: 800px) {
+    .cards-container {
+        padding: 25px 5px;
+    }
+}
